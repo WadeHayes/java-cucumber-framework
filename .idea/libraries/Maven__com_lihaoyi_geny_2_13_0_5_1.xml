@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.lihaoyi:geny_2.13:0.5.1">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/lihaoyi/geny_2.13/0.5.1/geny_2.13-0.5.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/lihaoyi/geny_2.13/0.5.1/geny_2.13-0.5.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/lihaoyi/geny_2.13/0.5.1/geny_2.13-0.5.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
