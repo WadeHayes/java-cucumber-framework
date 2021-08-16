@@ -1,6 +1,6 @@
 # Project exclude paths
 /target/
-/idea/
+/.idea/
 # Default ignored files
 /shelf/
 /workspace.xml
