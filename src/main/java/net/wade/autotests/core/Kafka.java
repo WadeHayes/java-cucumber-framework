@@ -2,9 +2,14 @@ package net.wade.autotests.core;
 
 import org.apache.kafka.common.serialization.Deserializer;
 import org.apache.kafka.common.serialization.Serializer;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.Collections;
@@ -27,12 +32,6 @@ public class Kafka {
     public Kafka(Properties producerProperties, Properties consumerProperties) {
         this.producer = new KafkaProducerUtils(producerProperties);
         this.consumer = new KafkaConsumerUtils(consumerProperties);
-    }
-
-    private static Properties readProperties(String prefix) {
-        Properties properties = new Properties();
-        //дописать получение пропертей
-        return properties;
     }
 
     /**
@@ -196,6 +195,17 @@ public class Kafka {
 
         public Kafka build() {
             return new Kafka(producerProperties, consumerProperties);
+        }
+    }
+
+    private static Properties readProperties(String s) {
+        Properties properties = new Properties();
+        try (FileInputStream fileInputStream = new FileInputStream("src/java/resources/autotest.properties")) {
+            properties.load(fileInputStream);
+            return properties;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
         }
     }
 }
